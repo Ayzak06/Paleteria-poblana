@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+/*
+ * Sistema de diseño
+ * Paleta tomada del puesto real: papel crema, rosa mexicano, azul talavera,
+ * mango y lima. Los tokens generan utilidades (bg-rosa, text-talavera, font-display...).
+ */
+@theme {
+  --color-crema: #fff8ec;
+  --color-papel: #f4e6d0;
+  --color-rosa: #e4007c;
+  --color-rosa-suave: #ffd9ec;
+  --color-talavera: #17497f;
+  --color-talavera-suave: #dbe7f4;
+  --color-mango: #ffb627;
+  --color-lima: #6fa83c;
+  --color-cafe: #2f1b10;
+  --color-madera: #c8a165;
+
+  --font-display: 'Alfa Slab One', Georgia, serif;
+  --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(47 27 16 / 0.06), 0 14px 34px -18px rgb(47 27 16 / 0.35);
+  --shadow-lift: 0 2px 4px rgb(47 27 16 / 0.06), 0 24px 42px -20px rgb(47 27 16 / 0.42);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-crema);
+    color: var(--color-cafe);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  ::selection {
+    background-color: var(--color-rosa);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-rosa);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

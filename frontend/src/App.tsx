@@ -7,7 +7,6 @@ import Catalogo from './pages/Catalogo'
 import ProductoDetalle from './pages/ProductoDetalle'
 import Visitanos from './pages/Visitanos'
 import NoEncontrado from './pages/NoEncontrado'
-import styles from './App.module.scss'
 
 // Regresa el scroll arriba al cambiar de página (no al cambiar filtros del catálogo)
 function ScrollArriba() {
@@ -20,10 +19,18 @@ function ScrollArriba() {
 
 export default function App() {
   return (
-    <div className={styles.app}>
+    <div className="flex min-h-screen flex-col">
+      <a
+        href="#contenido"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-rosa focus:px-5 focus:py-2 focus:font-bold focus:text-white"
+      >
+        Saltar al contenido
+      </a>
+
       <ScrollArriba />
       <Navbar />
-      <main className={styles.main}>
+
+      <main id="contenido" className="flex-1">
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/catalogo" element={<Catalogo />} />
@@ -32,6 +39,7 @@ export default function App() {
           <Route path="*" element={<NoEncontrado />} />
         </Routes>
       </main>
+
       <Footer />
     </div>
   )

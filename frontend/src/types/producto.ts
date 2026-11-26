@@ -11,6 +11,8 @@ export interface Categoria {
   id: CategoriaId
   nombre: string
   emoji: string
+  /** Foto que se muestra en el círculo de categorías. */
+  imagen: string
 }
 
 export interface Producto {

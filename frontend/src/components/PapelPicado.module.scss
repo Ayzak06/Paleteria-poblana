@@ -1,0 +1,18 @@
+/* Borde de papel picado. El color se toma de los tokens de Tailwind. */
+.franja {
+  height: 18px;
+  background-repeat: repeat-x;
+  background-size: 22px 18px;
+}
+
+.rosa {
+  background-image: radial-gradient(circle at 11px -4px, transparent 10px, var(--color-rosa) 10.5px);
+}
+
+.crema {
+  background-image: radial-gradient(circle at 11px -4px, transparent 10px, var(--color-crema) 10.5px);
+}
+
+.invertido {
+  transform: rotate(180deg);
+}
