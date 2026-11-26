@@ -1,0 +1,112 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.catalogo {
+  @include contenedor;
+  padding-block: 3rem;
+}
+
+.titulo {
+  @include titulo(2.25rem);
+}
+
+.nota {
+  margin-top: 0.5rem;
+  color: rgba($cafe, 0.7);
+}
+
+// ===== Filtros =====
+.filtros {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  @include desde(md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: $radio-full;
+  background: $blanco;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color $transicion, box-shadow $transicion;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $rosa;
+  }
+}
+
+.chip-activo,
+.chip-activo:hover {
+  background: $rosa;
+  color: $blanco;
+  box-shadow: none;
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+
+  input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: $rosa;
+  }
+}
+
+.buscador {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba($cafe, 0.2);
+  border-radius: $radio-full;
+  background: $blanco;
+  outline: none;
+  transition: border-color $transicion, box-shadow $transicion;
+
+  &:focus {
+    border-color: $rosa;
+    box-shadow: 0 0 0 3px $rosa-claro;
+  }
+
+  @include desde(md) {
+    width: 14rem;
+  }
+}
+
+// ===== Resultados =====
+.grid {
+  @include grid-productos;
+  margin-top: 2rem;
+}
+
+.vacio {
+  padding-block: 5rem;
+  text-align: center;
+  color: rgba($cafe, 0.6);
+}

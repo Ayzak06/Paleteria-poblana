@@ -1,0 +1,86 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.detalle {
+  @include contenedor(64rem);
+  padding-block: 3rem;
+}
+
+.contenedor-error {
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+.contenido {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+
+  @include desde(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: $radio-lg;
+  overflow: hidden;
+}
+
+.foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ilustracion {
+  height: 75%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.categoria {
+  padding: 0.25rem 0.75rem;
+  border-radius: $radio-full;
+  background: $rosa-claro;
+  color: $rosa;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.nombre {
+  @include titulo(3rem);
+  margin-top: 1rem;
+}
+
+.descripcion {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: rgba($cafe, 0.8);
+}
+
+.precio {
+  margin-top: 1.5rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.estado {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.disponible { color: $limon; }
+.agotado { color: rgba($cafe, 0.5); }
+
+.boton {
+  margin-top: 2rem;
+}
