@@ -1,0 +1,37 @@
+/* Entrada orquestada del hero: un solo momento, no animaciones por todos lados. */
+.entrada > * {
+  animation: subir 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.entrada > *:nth-child(1) { animation-delay: 0.05s; }
+.entrada > *:nth-child(2) { animation-delay: 0.12s; }
+.entrada > *:nth-child(3) { animation-delay: 0.19s; }
+.entrada > *:nth-child(4) { animation-delay: 0.26s; }
+.entrada > *:nth-child(5) { animation-delay: 0.33s; }
+
+.sello {
+  transform: rotate(-8deg);
+  animation: aparecer 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: rotate(-16deg) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-8deg) scale(1);
+  }
+}
